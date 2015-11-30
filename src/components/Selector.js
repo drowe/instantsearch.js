@@ -10,16 +10,24 @@ class Selector extends React.Component {
 
     let handleChange = this.handleChange.bind(this);
 
+    let label = null;
+    if (this.props.label) {
+      label = <label>{this.props.label}</label>;
+    }
+
     return (
-      <select
-        className={this.props.cssClasses.root}
-        defaultValue={currentValue}
-        onChange={handleChange}
-      >
-        {options.map((option) => {
-          return <option className={this.props.cssClasses.item} key={option.value} value={option.value}>{option.label}</option>;
-        })}
-      </select>
+        <div>
+          {label}
+          <select
+              className={this.props.cssClasses.root}
+              defaultValue={currentValue}
+              onChange={handleChange}
+          >
+            {options.map((option) => {
+              return <option className={this.props.cssClasses.item} key={option.value} value={option.value}>{option.label}</option>;
+            })}
+          </select>
+        </div>
     );
   }
 }
@@ -39,6 +47,7 @@ Selector.propTypes = {
     React.PropTypes.string,
     React.PropTypes.number
   ]).isRequired,
+  label: React.PropTypes.string,
   options: React.PropTypes.arrayOf(
     React.PropTypes.shape({
       value: React.PropTypes.oneOfType([

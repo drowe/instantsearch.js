@@ -16,6 +16,7 @@ let autoHideContainerHOC = require('../../decorators/autoHideContainer');
  * @param  {string} options.indices[0].name Name of the index to target
  * @param  {string} options.indices[0].label Label displayed in the dropdown
  * @param  {boolean} [options.autoHideContainer=false] Hide the container when no results match
+ * @param  {string} [options.label] Label to add close to the <select> element
  * @param  {Object} [options.cssClasses] CSS classes to be added
  * @param  {string} [options.cssClasses.root] CSS classes added to the parent <select>
  * @param  {string} [options.cssClasses.item] CSS classes added to each <option>
@@ -26,13 +27,15 @@ sortBySelector({
   container,
   indices,
   [cssClasses.{root,item}={}],
-  [autoHideContainer=false]
+  [autoHideContainer=false],
+  [label='Sort by']
 })`;
 function sortBySelector({
     container,
     indices,
     cssClasses: userCssClasses = {},
-    autoHideContainer = false
+    autoHideContainer = false,
+    label
   } = {}) {
   if (!container || !indices) {
     throw new Error(usage);
@@ -75,6 +78,7 @@ function sortBySelector({
         <Selector
           cssClasses={cssClasses}
           currentValue={currentIndex}
+          label={label}
           options={selectorOptions}
           setValue={setIndex}
           shouldAutoHideContainer={hasNoResults}

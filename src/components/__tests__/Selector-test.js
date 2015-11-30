@@ -20,6 +20,7 @@ describe('Selector', () => {
   it('should render <Selector/> with strings', () => {
     let out = render({
       currentValue: 'index-a',
+      label: 'Sort by',
       cssClasses: {
         root: 'custom-root',
         item: 'custom-item'
@@ -27,14 +28,17 @@ describe('Selector', () => {
       options: [{value: 'index-a', label: 'Index A'}, {value: 'index-b', label: 'Index B'}]
     });
     expect(out).toEqualJSX(
-      <select
-        className="custom-root"
-        defaultValue="index-a"
-        onChange={() => {}}
-      >
-        <option className="custom-item" value="index-a">Index A</option>
-        <option className="custom-item" value="index-b">Index B</option>
-      </select>
+        <div>
+          <label>Sort by</label>
+          <select
+              className="custom-root"
+              defaultValue="index-a"
+              onChange={() => {}}
+          >
+            <option className="custom-item" value="index-a">Index A</option>
+            <option className="custom-item" value="index-b">Index B</option>
+          </select>
+        </div>
     );
   });
 
@@ -48,14 +52,16 @@ describe('Selector', () => {
       options: [{value: 10, label: '10 results per page'}, {value: 20, label: '20 results per page'}]
     });
     expect(out).toEqualJSX(
-      <select
-        className="custom-root"
-        defaultValue={10}
-        onChange={() => {}}
-      >
-        <option className="custom-item" value={10}>10 results per page</option>
-        <option className="custom-item" value={20}>20 results per page</option>
-      </select>
+        <div>
+          <select
+              className="custom-root"
+              defaultValue={10}
+              onChange={() => {}}
+          >
+            <option className="custom-item" value={10}>10 results per page</option>
+            <option className="custom-item" value={20}>20 results per page</option>
+          </select>
+        </div>
     );
   });
 

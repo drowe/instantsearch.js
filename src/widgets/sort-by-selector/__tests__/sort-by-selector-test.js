@@ -30,6 +30,7 @@ describe('sortBySelector()', () => {
 
   let ReactDOM;
   let container;
+  let label;
   let indices;
   let cssClasses;
   let widget;
@@ -46,6 +47,7 @@ describe('sortBySelector()', () => {
     sortBySelector.__Rewire__('autoHideContainerHOC', autoHideContainer);
 
     container = document.createElement('div');
+    label = 'Sort by';
     indices = [
       {name: 'index-a', label: 'Index A'},
       {name: 'index-b', label: 'Index B'}
@@ -54,7 +56,7 @@ describe('sortBySelector()', () => {
       root: 'custom-root',
       item: 'custom-item'
     };
-    widget = sortBySelector({container, indices, cssClasses});
+    widget = sortBySelector({container, indices, cssClasses, label});
     helper = {
       getIndex: sinon.stub().returns('index-a'),
       setIndex: sinon.spy(),
@@ -74,6 +76,7 @@ describe('sortBySelector()', () => {
     widget.render({helper, results});
     widget.render({helper, results});
     props = {
+      label: label,
       cssClasses: {
         root: 'ais-sort-by-selector custom-root',
         item: 'ais-sort-by-selector--item custom-item'
