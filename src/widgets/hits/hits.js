@@ -1,12 +1,12 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
 
-let utils = require('../../lib/utils');
+let utils = require('../../lib/utils.js');
 let bem = utils.bemHelper('ais-hits');
 let cx = require('classnames');
 
-let Hits = require('../../components/Hits');
-let defaultTemplates = require('./defaultTemplates');
+let Hits = require('../../components/Hits.js');
+let defaultTemplates = require('./defaultTemplates.js');
 
 /**
  * Display the list of results (hits) from the current search

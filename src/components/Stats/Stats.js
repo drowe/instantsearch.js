@@ -1,6 +1,6 @@
 let React = require('react');
 
-let Template = require('../Template');
+let Template = require('../Template.js');
 
 class Stats extends React.Component {
   render() {

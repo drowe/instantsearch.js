@@ -1,15 +1,15 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
 
-let utils = require('../../lib/utils');
+let utils = require('../../lib/utils.js');
 let bem = utils.bemHelper('ais-star-rating');
 let cx = require('classnames');
 
-let autoHideContainerHOC = require('../../decorators/autoHideContainer');
-let headerFooterHOC = require('../../decorators/headerFooter');
+let autoHideContainerHOC = require('../../decorators/autoHideContainer.js');
+let headerFooterHOC = require('../../decorators/headerFooter.js');
 
-let defaultTemplates = require('./defaultTemplates');
-let defaultLabels = require('./defaultLabels');
+let defaultTemplates = require('./defaultTemplates.js');
+let defaultLabels = require('./defaultLabels.js');
 
 const usage = `Usage:
 starRating({
@@ -63,7 +63,7 @@ function starRating({
   autoHideContainer = true
   }) {
   let containerNode = utils.getContainerNode(container);
-  let RefinementList = headerFooterHOC(require('../../components/RefinementList/RefinementList'));
+  let RefinementList = headerFooterHOC(require('../../components/RefinementList/RefinementList.js'));
   if (autoHideContainer === true) {
     RefinementList = autoHideContainerHOC(RefinementList);
   }

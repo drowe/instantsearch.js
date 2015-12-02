@@ -1,10 +1,10 @@
 let React = require('react');
 let forEach = require('lodash/collection/forEach');
 let defaultsDeep = require('lodash/object/defaultsDeep');
-let {isSpecialClick} = require('../../lib/utils');
+let {isSpecialClick} = require('../../lib/utils.js');
 
-let Paginator = require('./Paginator');
-let PaginationLink = require('./PaginationLink');
+let Paginator = require('./Paginator.js');
+let PaginationLink = require('./PaginationLink.js');
 
 let cx = require('classnames');
 

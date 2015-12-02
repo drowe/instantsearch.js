@@ -1,13 +1,13 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
 
-let utils = require('../../lib/utils');
+let utils = require('../../lib/utils.js');
 
-let generateRanges = require('./generate-ranges');
+let generateRanges = require('./generate-ranges.js');
 
-let defaultTemplates = require('./defaultTemplates');
-let autoHideContainerHOC = require('../../decorators/autoHideContainer');
-let headerFooterHOC = require('../../decorators/headerFooter');
+let defaultTemplates = require('./defaultTemplates.js');
+let autoHideContainerHOC = require('../../decorators/autoHideContainer.js');
+let headerFooterHOC = require('../../decorators/headerFooter.js');
 
 let bem = utils.bemHelper('ais-price-ranges');
 let cx = require('classnames');
@@ -67,7 +67,7 @@ function priceRanges({
   }
 
   let containerNode = utils.getContainerNode(container);
-  let PriceRanges = headerFooterHOC(require('../../components/PriceRanges/PriceRanges'));
+  let PriceRanges = headerFooterHOC(require('../../components/PriceRanges/PriceRanges.js'));
   if (autoHideContainer === true) {
     PriceRanges = autoHideContainerHOC(PriceRanges);
   }

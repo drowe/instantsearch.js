@@ -7,8 +7,8 @@ let union = require('lodash/array/union');
 
 let EventEmitter = require('events').EventEmitter;
 
-let urlSyncWidget = require('./url-sync');
-let version = require('./version');
+let urlSyncWidget = require('./url-sync.js');
+let version = require('./version.js');
 
 function defaultCreateURL() { return '#'; }
 
@@ -59,7 +59,7 @@ Usage: instantsearch({
     this.searchParameters = searchParameters || {};
     this.widgets = [];
     this.templatesConfig = {
-      helpers: require('./helpers')({numberLocale}),
+      helpers: require('./helpers.js')({numberLocale}),
       compileOptions: {}
     };
     this.urlSync = urlSync;

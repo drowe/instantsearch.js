@@ -1,16 +1,16 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
 
-let utils = require('../../lib/utils');
+let utils = require('../../lib/utils.js');
 let bem = utils.bemHelper('ais-refinement-list');
 let cx = require('classnames');
 let find = require('lodash/collection/find');
 let includes = require('lodash/collection/includes');
 
-let autoHideContainerHOC = require('../../decorators/autoHideContainer');
-let headerFooterHOC = require('../../decorators/headerFooter');
+let autoHideContainerHOC = require('../../decorators/autoHideContainer.js');
+let headerFooterHOC = require('../../decorators/headerFooter.js');
 
-let defaultTemplates = require('./defaultTemplates');
+let defaultTemplates = require('./defaultTemplates.js');
 
 /**
  * Instantiate a list of refinements based on a facet
@@ -62,7 +62,7 @@ function numericRefinementList({
   }
 
   let containerNode = utils.getContainerNode(container);
-  let RefinementList = headerFooterHOC(require('../../components/RefinementList/RefinementList'));
+  let RefinementList = headerFooterHOC(require('../../components/RefinementList/RefinementList.js'));
   if (autoHideContainer === true) {
     RefinementList = autoHideContainerHOC(RefinementList);
   }

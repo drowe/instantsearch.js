@@ -1,7 +1,7 @@
 let React = require('react');
 let map = require('lodash/collection/map');
 
-let Template = require('./Template');
+let Template = require('./Template.js');
 
 class Hits extends React.Component {
   renderWithResults() {

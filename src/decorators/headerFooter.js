@@ -5,7 +5,7 @@ let React = require('react');
 
 let cx = require('classnames');
 
-let Template = require('../components/Template');
+let Template = require('../components/Template.js');
 
 function headerFooter(ComposedComponent) {
   class HeaderFooter extends React.Component {

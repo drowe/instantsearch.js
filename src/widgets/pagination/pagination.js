@@ -3,10 +3,10 @@ let ReactDOM = require('react-dom');
 let defaults = require('lodash/object/defaults');
 let cx = require('classnames');
 
-let utils = require('../../lib/utils');
+let utils = require('../../lib/utils.js');
 let bem = utils.bemHelper('ais-pagination');
 
-let autoHideContainerHOC = require('../../decorators/autoHideContainer');
+let autoHideContainerHOC = require('../../decorators/autoHideContainer.js');
 let defaultLabels = {
   previous: '‹',
   next: '›',
@@ -72,7 +72,7 @@ function pagination({
 
   let containerNode = utils.getContainerNode(container);
   let scrollToNode = scrollTo !== false ? utils.getContainerNode(scrollTo) : false;
-  let Pagination = require('../../components/Pagination/Pagination');
+  let Pagination = require('../../components/Pagination/Pagination.js');
   if (autoHideContainer === true) {
     Pagination = autoHideContainerHOC(Pagination);
   }

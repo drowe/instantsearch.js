@@ -3,10 +3,10 @@ let ReactDOM = require('react-dom');
 
 let findIndex = require('lodash/array/findIndex');
 let map = require('lodash/collection/map');
-let utils = require('../../lib/utils');
+let utils = require('../../lib/utils.js');
 let bem = utils.bemHelper('ais-sort-by-selector');
 let cx = require('classnames');
-let autoHideContainerHOC = require('../../decorators/autoHideContainer');
+let autoHideContainerHOC = require('../../decorators/autoHideContainer.js');
 
 /**
  * Instantiate a dropdown element to choose the current targeted index
@@ -39,7 +39,7 @@ function sortBySelector({
   }
 
   let containerNode = utils.getContainerNode(container);
-  let Selector = require('../../components/Selector');
+  let Selector = require('../../components/Selector.js');
   if (autoHideContainer === true) {
     Selector = autoHideContainerHOC(Selector);
   }

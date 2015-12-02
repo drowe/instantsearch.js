@@ -1,10 +1,10 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
 
-let utils = require('../../lib/utils');
+let utils = require('../../lib/utils.js');
 let find = require('lodash/collection/find');
-let autoHideContainerHOC = require('../../decorators/autoHideContainer');
-let headerFooterHOC = require('../../decorators/headerFooter');
+let autoHideContainerHOC = require('../../decorators/autoHideContainer.js');
+let headerFooterHOC = require('../../decorators/headerFooter.js');
 
 let defaultTemplates = {
   header: '',
@@ -60,7 +60,7 @@ function rangeSlider({
   }
 
   let containerNode = utils.getContainerNode(container);
-  let Slider = headerFooterHOC(require('../../components/Slider/Slider'));
+  let Slider = headerFooterHOC(require('../../components/Slider/Slider.js'));
   if (autoHideContainer === true) {
     Slider = autoHideContainerHOC(Slider);
   }
